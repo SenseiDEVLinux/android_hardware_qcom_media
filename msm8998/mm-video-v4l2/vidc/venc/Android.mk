@@ -143,6 +143,7 @@ ifneq (,$(call is-board-platform-in-list2, $(TARGETS_THAT_NEED_SW_VENC_MPEG4)))
 # 			Make the Shared library (libOmxSwVencMpeg4)
 # ---------------------------------------------------------------------------------
 
+ifneq ($(QCPATH),)
 include $(CLEAR_VARS)
 
 libmm-venc-inc      += $(TARGET_OUT_HEADERS)/mm-video/swvenc
@@ -175,6 +176,7 @@ LOCAL_SRC_FILES   += src/omx_swvenc_mpeg4.cpp
 LOCAL_CFLAGS      += -Wno-error
 
 include $(BUILD_SHARED_LIBRARY)
+endif # QCPATH
 endif
 
 
